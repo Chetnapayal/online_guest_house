@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/index.css') }}">
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h1>IIT Kharagpur Guest House</h1>
+                {# <img src="https://assets.codepen.io/285131/acme-2.svg" />#}
+            </div>
+
+            <nav class="header-navigation">
+                <a href="/">Home</a>
+                <a href="/">Login</a>
+                <a href="/signup">Register</a>
+                <a href="http://www.iitkgp.ac.in/">About</a>
+                <a href="#footerid">Contact Us</a>           
+{#                <button>Menu</button>#}
+            </nav>
+        </div>
+    </header>
+    <img class="backImage" src={{ url_for( 'static',filename='/images/kgpbuilding.png' ) }} />
+    <div class="container" id="container">
+        {#
+        <div class="form-container sign-up-container">#} {#
+            <form action="#">#} {#
+                <h1>Create Account</h1>#} {#
+                <div class="social-container">#} {# <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>#} {# <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>#} {# <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>#} {# </div>#} {# <span>or use your email for registration</span>#}
+                {# <input type="text" placeholder="Name" />#} {# <input type="email" placeholder="Email" />#} {# <input type="password" placeholder="Password" />#} {# <button>Sign Up</button>#} {# </form>#} {# </div>#}
+        <div class="form-container sign-in-container">
+            <form action="/" method="POST">
+                <h1 style="color:rgb(255, 255, 255);" class="margin">Sign in</h1>
+                {#
+                <div class="social-container">#} {# <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>#} {# <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>#} {# <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>#} {# </div>#} {# <span>or use your account</span>#}
+                {% if flag == 0%}
+                <span class="error">Waiting  for Authentication by Admin !!</span> {% elif flag == 1 %}
+                <span class="error">Username or Password wrong !!</span> {% elif flag == 2 %}
+                <span class="error">Authentication Denied !!</span> {% endif %}
+                <input type="text" name="username" id="email" placeholder="UserName" />
+                <input type="password" name="password" id="password" placeholder="Password" /> {# <a href="#">Forgot your password?</a>#}
+                
+                <input class="button margin buttonSignIn" id="login" type="submit" value="Sign In" />
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                {#
+                <div class="overlay-panel overlay-left">#} {#
+                    <h1>Welcome Back!</h1>#} {#
+                    <p>To keep connected with us please login with your personal info</p>#} {# <button class="ghost" id="signIn">Sign In</button>#} {# </div>#}
+                <div class="overlay-panel overlay-right">
+                    <h1 style="color:rgb(255, 255, 255);">Welcome!</h1>
+                    <p style="color:rgb(255, 255, 255);
+                       font-size: medium;">Create an account and start your journey with us</p>
+                    <a href="signup"><button class="ghost" id="signUp">Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="guestHouses">
+        <div class="guestHouse">
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/tgh.png' ) }}/>
+            <div class="textBox">
+                <div class="guestHouseName"><h>Technology Guest House</h>
+                    <!-- <p style="font-size: 15px;
+                        margin-top: 3px;">This guest house is near snvh hall.<br>
+                                    This is most liked guest house of IIT Kharagpur.<br>
+                              Facilities:Express check-in &amp; <br>check-out
+                             <br> 24-hours front help desk     
+                             <br> Waiting Lobby
+                           <br>   News Paper                  
+                            <br>  Lift
+                            <br>  Dinning                  
+                           <br>   Wake-up calls
+                           <br>   Conference Hall    
+                            <br>  Banquet Hall</p> -->
+                    </div>
+            </div>
+        </div>
+        <div class="guestHouse">
+            <div class="textBox">
+                <div class="guestHouseName">Visveswaraya Guest House</div>
+                <!-- <p style="font-size: 15px;
+                        margin-top: 3px;">This guest house is near Tikka.<br>
+                                    This is most affordable guest house of IIT Kharagpur.<br>
+                              Facilities:Express check-in &amp; <br>check-out
+                             <br> 24-hours front help desk     
+                             <br> Waiting Lobby
+                           <br>   News Paper                  
+                            <br>  Lift
+                            <br>  Dinning                  
+                           <br>   Wake-up calls
+                           <br>   Conference Hall    
+                            <br>  Banquet Hall</p> -->
+            </div>
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/vgh.png' ) }}/>
+        </div>
+        <div class="guestHouse">
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/kolkata1.jpg' ) }}/>
+            <div class="textBox">
+                <div class="guestHouseName">Kolkata Guest House</div>
+                <!-- <p style="font-size: 15px;
+                        margin-top: 3px;">This guest house is in Kolkata.<br>
+                                    This is made specially for VIP people.<br>
+                              Facilities:Express check-in &amp; <br>check-out
+                             <br> 24-hours front help desk     
+                             <br> Waiting Lobby
+                           <br>   News Paper                  
+                            <br>  Lift
+                            <br>  Dinning                  
+                           <br>   Wake-up calls
+                           <br>   Conference Hall    
+                            <br>  Banquet Hall</p> -->
+            </div>
+        </div>
+    </div>
+
+<footer id="dk-footer" class="dk-footer">
+            <div class="footerContainer" >
+                <a name="footerid"></a>
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU" alt="footer_logo" class="img img-fluid">
+                </div>
+                <div class="info">
+                        <div class="contact-us">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Contact: </h3>
+                                <p>Guest House Office</p>
+                                <p>IIT Kharagpur</p>
+                                <p>Kharagpur, 721302</p>
+                            </div>
+                        </div>
+                        <div class="contact-us">
+                            <div class="contact-icon">
+                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Phone Number: </h3>
+                                <p>+91 9756284919</p>
+                                <p>0240 2573842</p>
+                            </div>
+                        </div>
+                        <div class="contact-us email">
+                            <div class="contact-icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Email</h3>
+                                <p>tgh@iitkgp.ac.in</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        <div class="copyright">
+            <span>Copyright © 2023, All Right Reserved Seobin</span>
+            <div class="copyright-menu">
+                <ul>
+                    <li>
+                        <a href="http://www.iitkgp.ac.in/">Home</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tgh.iitkgp.ac.in/?id=randc">Terms</a>
+                    </li>
+                    <li>
+                        <a href="http://www.iitkgp.ac.in/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</footer>
+
+</body>
+<script src="{{ url_for('static',filename='/js/index.js') }}"></script>
+
+</html>

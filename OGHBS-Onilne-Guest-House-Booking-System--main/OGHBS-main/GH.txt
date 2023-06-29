@@ -1,0 +1,19 @@
+GH
+1, Indian Institute of Technology Kharagpur, Kharagpur 721302, Technology Guest House
+2, Indian Institute of Technology Kharagpur, Kharagpur 721302, Visveswaraya Guest House
+3, IIT Kharagpur Kolkata Campus HC Block, Sector – III Salt Lake City Kolkata – 700106, Kolkata Guest House
+
+Rooms
+1, 0, D/B AC Rooms, Double Bed, status, 1, 1000, 2, 1
+2, 0, D/B NON AC Rooms, Single Bed, status, 1, 800, 2, 0
+3, 1, Suite Rooms, Single Bed, status, 1, 2000, 1, 1
+4, 2, Meeting Room, status, 1, 5000, 10, 1
+5, 0, D/B AC Rooms, Double Bed, status, 2, 600, 3, 1
+6, 0, D/B Non AC Rooms, Double Bed, status, 2, 400, 3, 0
+7, 2, Dormitory Beds AC, status, 2, 250, 1, 1
+8, 1, Community Hall, status, 2, 1250, 20, 0
+9, 0, Cottages, Double Bed, status, 3, 1000, 2, 0
+10, 2, Conference Hall, status, 3, 5000, 100, 1
+11, 1, Board Room, status, 3, 8000, 10, 1
+
+

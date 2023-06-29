@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/admin.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h1>KGP Guest House</h1>
+                {# <img src="https://assets.codepen.io/285131/acme-2.svg" />#}
+            </div>
+
+            <nav class="header-navigation">
+                
+                <a href="/"
+                   style="font-size: larger;">
+                   Logout
+                </a>
+               
+            </nav>
+        </div>
+    </header>
+    <div class="nav">
+        <ul class="navigation">
+            <li><a href="/admin">Authorize Users</a></li>
+            <li><a href="/adminDates">View Rooms</a></li>
+            <li><a href="/adminHistory">All Bookings</a></li>
+
+        </ul>
+    </div>
+    {% for user in users %}
+    <div class="bookingBox">
+        <div>
+            <img src="https://p.kindpng.com/picc/s/21-211168_transparent-person-icon-png-png-download.png" width="300px" height="300px" />
+        </div>
+        <div class="center">
+            <div class="bookingId">
+                <h2>{{user.username}}</h2>
+            </div>
+            <div class="bookingDates">
+                <div class="date">
+                    <p>
+                    <h3><b>Name:</b> {{ user.name }}</h3></p>
+                </div>
+                <div class="date">
+                    <p><h3><b>Age:</b> {{ user.age }}</h3></p>
+                </div>
+                <div class="date">
+                    <h3><b>Gender:</b> {{ user.gender }}</h3></p>
+                </div>
+            </div>
+            <div class="details">
+                
+                <div class="date">
+                    <h3><b>Address:</b> {{ user.address }}</h3></p>
+                </div>
+            </div>
+            <div class="details">
+                <div class="date">
+                    <h3><b>Student's Roll number:</b> {{user.rollStd}}</h3></p>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="buttonDiv">
+            <a href="{{ url_for('authorize', userId=user.id, desc=2) }}" class="room_features--book-btn"><button class="button">Deny</button></a>
+            <a href="{{ url_for('authorize', userId=user.id, desc=1) }}" class="room_features--book-btn"><button class="button">Authorize</button></a>
+        </div>
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
